@@ -13,10 +13,9 @@ public class CostCalculator {
         finishMultiplier.put(Finish.MATT, 1.2);
         finishMultiplier.put(Finish.SATIN, 1.0);
         finishMultiplier.put(Finish.SILK, 1.0);
-
     }
 
-    public static double cost(Wall wall, double litres) {
-        return 4 * wall.surfaceArea * colourMultiplier.get(wall.colour) * finishMultiplier.get(wall.finish);
+    public static double cost(Wall wall) {
+        return 4 * wall.getLitres() * colourMultiplier.get(wall.colour) * finishMultiplier.get(wall.finish);
     }
 }

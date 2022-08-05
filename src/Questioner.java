@@ -1,8 +1,7 @@
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.Scanner;
 
-public class Question {
+public class Questioner {
     static private final Scanner scanner = new Scanner(System.in);
 
     public static double getNumericAnswer(String question, int maxValue) {

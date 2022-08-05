@@ -20,11 +20,13 @@ enum Finish {
 
 
 public class Wall {
-    double surfaceArea;
-    WallShape wallShape;
-    Finish finish;
-    Colour colour;
-    int coats;
+    final double surfaceArea;
+    final WallShape wallShape;
+    final Finish finish;
+    final Colour colour;
+    final int coats;
+
+    private double litres = 0;
 
     Wall(double surfaceArea, WallShape wallShape, Finish finish, Colour colour, int coats) {
         this.surfaceArea = surfaceArea;
@@ -32,5 +34,12 @@ public class Wall {
         this.finish = finish;
         this.colour = colour;
         this.coats = coats;
+    }
+
+    public double getLitres() {
+        if (litres == 0) {
+            this.litres = PaintCalculator.amount(this);
+        }
+        return this.litres;
     }
 }
